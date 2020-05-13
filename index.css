@@ -2,7 +2,7 @@ html,body{height: 100%;}
 *{margin: 0; padding: 0;}
 .open{height: 100%; background-color: #8470FF; text-align: center;}
 .open p{padding-top: 200px; font-size: 40px; letter-spacing: 2px;}
-.open button{display: block; margin: 20px auto; padding: 10px 50px; font-size: 20px; letter-spacing: 1px; border: none; border-radius: 5px; outline: none; cursor: pointer;}
+.open button{display: block; margin: 20px auto; padding: 10px 50px; font-size: 20px; letter-spacing: 1px; background-color: #FFF; border: none; border-radius: 5px; outline: none; cursor: pointer;}
 .open button:focus{background-color: rgba(255, 255, 255, .3); color: #FFF;}
 
 .page{position: fixed; top: 0; left: 100%; width: 100%; height: 100%; background-color: #FFF; text-align: center; transition: 300ms all;}
@@ -22,7 +22,8 @@ html,body{height: 100%;}
 
 @media screen and (max-width: 500px){
   .open p{padding-top: 150px;}
-  .page-main{width: 370px; height: 370px;}
+  .open button{padding: 15px 55px;}
+  .page-main{width: 360px; height: 360px;}
   .page-return{left: 20px;}
-  .shade>div{top: 30%; padding: 30px; width: 240px;  margin-left: -120px;}
+  .shade>div{top: 30%; padding: 30px; width: 260px; margin-left: -130px;}
 }
