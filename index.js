@@ -12,7 +12,7 @@ window.onload = ()=>{
         ["#556B2F","#8B814C","#5D478B","#191970","#668B8B","#483D8B","#008B8B","#363636","#009ACD","#8B4726",
         "#000000","#8B636C","#2F4F4F","#551A8B","#8B4C39","#00688B","#8B0A50","#CD3700","#2E8B57","#CD8500",
         "#8B3A3A","#473C8B","#8A2BE2","#FF3030","#8B6914","#FF1493","#8B864E"],
-        ["#2F4F4F","#668B8B","#2E8B57","#8B0A50","#CD8500","#B03060","#8A2BE2","#8B4726","#FF1493","#551A8B",
+        ["#2F4F4F","#2E8B57","#668B8B","#8B0A50","#CD8500","#B03060","#8A2BE2","#8B4726","#FF1493","#551A8B",
         "#556B2F","#000000","#5D478B","#00868B","#FF3030","#8B4C39","#8B6914","#CD3700","#008B8B","#8B814C",
         "#8B3A3A","#363636","#00688B","#8B636C","#191970","#473C8B","#009ACD","#8B475D","#8B864E","#483D8B",
         "#8B7D6B","#8B008B"],
@@ -26,7 +26,8 @@ window.onload = ()=>{
   // 进入页面
   let into = (e)=>{
     if(e.target.nodeName.toLowerCase() === 'button'){
-      let total = e.target.dataset.num,
+      let total = e.target.dataset.totel,
+          number = e.target.dataset.number,
           prop = e.target.dataset.name,
           index = e.target.dataset.index;
 
@@ -35,7 +36,7 @@ window.onload = ()=>{
 
       // 渲染页面
       let draw = (order)=>{
-        if(order == total){
+        if(order == number){
           shade.className += " active";
           shadeTitle.innerHTML = "你怎么这么可爱！";
           // shadeAgain.innerHTML = "再来一局";
