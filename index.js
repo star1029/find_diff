@@ -19,13 +19,14 @@ window.onload = ()=>{
         ["#191970","#551A8B","#8B4C39","#CD8500","#473C8B","#8A2BE2","#FF3030","#8B6914","#FF1493","#556B2F",
         "#8B814C","#5D478B","#009ACD","#2F4F4F","#CD3700","#008B8B","#8B864E","#483D8B","#668B8B","#8B3A3A",
         "#B03060","#363636","#8B4726","#000","#8B636C","#00688B","#8B0A50","#2E8B57","#00868B","#8B475D",
-        "#8B7D6B","#8B008B","#FFE4E1","#9AFF9A","#87CEFA","#FFF68F","#ADFF2F","#F5DEB3","#EEE8CD","#C1CDCD",
-        "#D1EEEE","#BCD2EE"]
+        "#8B7D6B","#8B008B"],
+        ["#FFE4E1","#9AFF9A","#87CEFA","#FFF68F","#ADFF2F","#F5DEB3","#EEE8CD","#C1CDCD","#D1EEEE","#BCD2EE"]
       ];
 
   // 进入页面
   let into = (e)=>{
     if(e.target.nodeName.toLowerCase() === 'button'){
+      // 获取数据
       let total = e.target.dataset.totel,
           number = e.target.dataset.number,
           prop = e.target.dataset.name,
@@ -37,10 +38,12 @@ window.onload = ()=>{
       // 渲染页面
       let draw = (order)=>{
         if(order == number){
+          // 通关游戏
           shade.className += " active";
           shadeTitle.innerHTML = "你怎么这么可爱！";
           // shadeAgain.innerHTML = "再来一局";
         }else{
+          // 游戏继续
           pageMain.innerHTML = "";
           let num = Math.floor( Math.random()*total);
           for(let i = 0; i < total; i++){
