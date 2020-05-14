@@ -11,7 +11,8 @@ html,body{height: 100%;}
 .page-main{margin: 150px auto; width: 500px; height: 500px; font-size: 0;}
 .easy,.medium,.diff,.hell{display: inline-block; margin: 1px; border-radius: 5px; cursor: pointer;}
 .easy{width: 32%; height: 32%;}
-.medium,.hell{width: 16%; height: 16%;}
+.medium{width: 16%; height: 16%;}
+.hell{width: 12%; height: 12%;}
 .diff{width: 10%; height: 10%;}
 
 .shade{position: fixed; top: -100%; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,.4); transition: 500ms all;}
