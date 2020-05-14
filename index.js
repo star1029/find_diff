@@ -5,7 +5,7 @@ window.onload = ()=>{
       pageReturn  = document.getElementById("pageReturn"),   //左上方 返回首页
       shade = document.getElementById("shade"),   //遮罩层
       shadeTitle = document.getElementById("shadeTitle"),   //遮罩标题
-      // shadeAgain = document.getElementById("shadeAgain"),   //游戏结束 再来一次
+      shadeAgain = document.getElementById("shadeAgain"),   //游戏结束 再来一次
       shadeReturn = document.getElementById("shadeReturn"),   //游戏结束 返回首页
       item = document.createElement("span"),    //新建元素
       colorList = [
@@ -41,7 +41,7 @@ window.onload = ()=>{
           // 通关游戏
           shade.className += " active";
           shadeTitle.innerHTML = "你怎么这么可爱！";
-          // shadeAgain.innerHTML = "再来一局";
+          shadeAgain.className ="hide";
         }else{
           // 游戏继续
           pageMain.innerHTML = "";
@@ -72,10 +72,17 @@ window.onload = ()=>{
           if(!e.target.classList.contains('itemBtn')){
             shade.className = "shade active";
             shadeTitle.innerHTML = "啊奥~好可惜~";
-            // shadeAgain.innerHTML = "重新来过";
+            shadeAgain.className = "";
+            shadeAgain.innerHTML = "重新来过";
           }
         }
       })
+      // 重新来过
+      shadeAgain.onclick = ()=>{
+        CLICK_ORDER = 0;
+        draw(CLICK_ORDER);
+        shade.className = "shade";
+      }
     };
   };
   
