@@ -54,7 +54,10 @@ window.onload = ()=>{
               cloneNode.style.opacity = .9;
               pageMain.appendChild(cloneNode);
               pageMain.getElementsByClassName("itemBtn")[0].onclick = ()=>{
-                draw(CLICK_ORDER);
+                document.getElementsByClassName("itemBtn")[0].className +=" active"
+                setTimeout(()=>{
+                  draw(CLICK_ORDER)
+                },800)
               };
             }else{
               cloneNode.className = prop;
