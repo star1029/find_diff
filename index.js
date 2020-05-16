@@ -7,7 +7,7 @@ window.onload = ()=>{
       shadeTitle = document.getElementById("shadeTitle"),   //遮罩标题
       shadeAgain = document.getElementById("shadeAgain"),   //游戏结束 再来一次
       shadeReturn = document.getElementById("shadeReturn"),   //游戏结束 返回首页
-      item = document.createElement("span"),    //新建元素
+      item = document.createElement("span"),   //新建元素
       colorList = [
         ["#556B2F","#8B814C","#5D478B","#191970","#668B8B","#483D8B","#008B8B","#363636","#009ACD","#8B4726",
         "#000000","#8B636C","#2F4F4F","#551A8B","#8B4C39","#00688B","#8B0A50","#CD3700","#2E8B57","#CD8500",
