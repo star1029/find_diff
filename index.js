@@ -88,6 +88,11 @@ window.onload = ()=>{
       }
     };
   };
+
+  //隐藏游戏引导
+  document.getElementById("introHide").onclick = ()=>{
+    document.getElementById("intro").style.display = 'none';
+  };
   
   // 入口页添加按钮点击事件
   open.addEventListener('click', (e)=>into(e));
