@@ -2,6 +2,12 @@ html,body{height: 100%;}
 *{margin: 0; padding: 0;}
 :root{--basic-color: #8470FF;}
 
+.intro{position: absolute; top: 50%; left: 50%; margin-top: -250px; margin-left: -150px; box-sizing: border-box; padding: 20px; width: 300px; height: 400px; border-radius: 5px; text-align: center; background-color: #FFF; box-shadow: 0 0 10px 10px rgba(255, 255, 255, .3)}
+.intro p{padding: 20px; font-size: 30px; font-weight: 600;}
+.intro div{text-indent: 25px; line-height: 26px; font-size: 14px; text-align: left;}
+.intro button{margin-top: 80px; padding: 10px 20px; letter-spacing: 1px; font-weight: 600; background-color: var(--basic-color); color: #FFF; border: none; border-radius: 5px; outline: none; cursor: pointer; -webkit-tap-highlight-color: transparent;}
+
+
 .open{height: 100%; background-color: var(--basic-color); text-align: center;}
 .open p{padding-top: 200px; font-size: 40px; letter-spacing: 2px;}
 .open button{display: block; margin: 20px auto; padding: 10px 50px; font-size: 20px; letter-spacing: 1px; background-color: #FFF; border: none; border-radius: 5px; outline: none; cursor: pointer;}
@@ -34,10 +40,15 @@ html,body{height: 100%;}
 
 .itemBtn.medium:after{content: ''; position: absolute; top: -6px; left: -6px; width: 10px; height: 10px; border-radius: 50%;}
 .itemBtn.medium.active:after{background-color: #FFF; box-shadow: 0 0 3px 3px #FFF; animation: around 800ms linear;}
+
+.itemBtn.diff:after{content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: transparent; transition: 800ms;}
+.itemBtn.diff.active:after{top: -10px; left: -10px; width: calc(100% + 20px); height: calc(100% + 20px);}
+
+
 @keyframes around{
-  25% {top: -6px; left: 75px;}
-  50% {top: 75px; left: 75px;}
-  75% {top: 75px; left: -6px;}
+  25% {top: -6px; left: calc(100% - 5px);}
+  50% {top: calc(100% - 5px); left: calc(100% - 5px);}
+  75% {top: calc(100% - 5px); left: -6px;}
   100% {top: -6px; left: -6px;}
 }
 
