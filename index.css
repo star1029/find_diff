@@ -60,5 +60,5 @@ button{-webkit-tap-highlight-color: transparent;}
   .page-return{left: 20px;}
   .shade>div{top: 30%; padding: 30px; width: 260px; margin-left: -130px;}
 
-  .intro{top: 50%; margin-top: -220px; width: 300px; height: 400px;}
+  .intro{top: 0; margin-top: 90px; width: 300px; height: 400px;}
 }
