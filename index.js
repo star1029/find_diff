@@ -29,7 +29,7 @@ window.onload = ()=>{
       // 获取数据
       let total = e.target.dataset.totel,
           number = e.target.dataset.number,
-          prop = e.target.dataset.name,
+          name = e.target.dataset.name,
           index = e.target.dataset.index;
 
       page.className += " active";
@@ -45,13 +45,22 @@ window.onload = ()=>{
         }else{
           // 游戏继续
           pageMain.innerHTML = "";
-          let num = Math.floor( Math.random()*total);
+          let num = Math.floor( Math.random()*total),
+              color = coloRandom();
           for(let i = 0; i < total; i++){
             let cloneNode = item.cloneNode(true);
             if(i == num){
-              cloneNode.className = "itemBtn " + prop;
-              cloneNode.style.backgroundColor = colorList[index][order];
-              cloneNode.style.opacity = .9;
+              cloneNode.className = "itemBtn " + name;
+              if(name == 'hell'){
+                cloneNode.style.backgroundColor = colorList[index][order];
+              }else{
+                cloneNode.style.backgroundColor = color;
+              };
+              if(name == 'diff' || name == 'hell'){
+                cloneNode.style.opacity = .95;
+              }else{
+                cloneNode.style.opacity = .9;
+              };
               pageMain.appendChild(cloneNode);
               pageMain.getElementsByClassName("itemBtn")[0].onclick = ()=>{
                 document.getElementsByClassName("itemBtn")[0].className +=" active"
@@ -60,8 +69,12 @@ window.onload = ()=>{
                 },800)
               };
             }else{
-              cloneNode.className = prop;
-              cloneNode.style.backgroundColor = colorList[index][order];
+              cloneNode.className = name;
+              if(name == 'hell'){
+                cloneNode.style.backgroundColor = colorList[index][order];
+              }else{
+                cloneNode.style.backgroundColor = color;
+              };
               pageMain.appendChild(cloneNode);
             };
           };
@@ -87,6 +100,16 @@ window.onload = ()=>{
         shade.className = "shade";
       }
     };
+  };
+
+  // 输出随机数
+  let coloRandom = ()=>{
+    let arr = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+    let color = '#';
+    for(let i = 0; i<6; i++){
+      color += arr[Math.floor( Math.random()*16)]
+    };
+    return color
   };
 
   //隐藏游戏引导
