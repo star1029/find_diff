@@ -2,6 +2,7 @@ window.onload = ()=>{
   let open = document.getElementById("open"),   //入口页面
       page = document.getElementById("page"),   //游戏界面
       pageMain = document.getElementById("pageMain"),    //游戏面板
+      buffer = document.getElementById("buffer"),   //缓冲圆圈
       pageReturn  = document.getElementById("pageReturn"),   //左上方 返回首页
       shade = document.getElementById("shade"),   //遮罩层
       shadeTitle = document.getElementById("shadeTitle"),   //遮罩标题
@@ -63,10 +64,14 @@ window.onload = ()=>{
               };
               pageMain.appendChild(cloneNode);
               pageMain.getElementsByClassName("itemBtn")[0].onclick = ()=>{
-                document.getElementsByClassName("itemBtn")[0].className +=" active"
+                document.getElementsByClassName("itemBtn")[0].className +=" active";
+                if(name == 'diff' || name == 'hell'){
+                  buffer.style.display = "block";
+                };
                 setTimeout(()=>{
-                  draw(CLICK_ORDER)
-                },800)
+                  buffer.style.display = "none";
+                  draw(CLICK_ORDER);
+                },800);
               };
             }else{
               cloneNode.className = name;
@@ -102,7 +107,7 @@ window.onload = ()=>{
     };
   };
 
-  // 输出随机数
+  // 输出随机颜色
   let coloRandom = ()=>{
     let arr = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
     let color = '#';
